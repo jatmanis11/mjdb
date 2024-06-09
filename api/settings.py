@@ -81,8 +81,15 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 DATABASE_URL="postgres://postgres:manijaat@.vercel.app:5432/test4"
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(config('DATABASE_URL', default="postgres://postgres:manijaat@.vercel.app:5432/test4"))
 }
+
+if 'default' in DATABASES:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+
+"""DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}"""
 #DATABASES = {'default': dj_database_url.config(default='postgres://user:pass@localhost/dbname')}
 #DATABASES = {}
 """
