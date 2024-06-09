@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
 DATABASE_URL="postgres://postgres:manijaat@.vercel.app:5432/test4"
-ENGINE': 'django.db.backends.postgresql'
+ENGINE= 'django.db.backends.postgresql'
 database_url = os.getenv('DATABASE_URL', 'postgres://postgres:manijaat@.vercel.app:5432/test4')
 
 # Parse the database URL
