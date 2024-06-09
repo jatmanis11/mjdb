@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-=cldztbc4jg&xl0!x673!*v2_=p$$eu)=7*f#d0#zs$44xx-h^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']#, '.vercel.app']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'api.wsgi.app'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 # Note: Django modules for using databases are not support in serverless
 # environments like Vercel. You can use a database over HTTP, hosted elsewhere.
-DATABASE_URL="postgres://postgres:manijaat@localhost:5432/test4"
+DATABASE_URL="postgres://postgres:manijaat@.vercel.app:5432/test4"
 ENGINE= 'django.db.backends.postgresql'
-database_url = os.getenv('DATABASE_URL', 'postgres://postgres:manijaat@localhost:5432/test4')
+database_url = os.getenv('DATABASE_URL', 'postgres://postgres:manijaat@.vercel.app:5432/test4')
 
 # Parse the database URL
 DATABASES = {
